@@ -16,7 +16,7 @@ CREATE TABLE currencies (
 -- 2. create the countries table
 DROP TABLE IF EXISTS countries;
 CREATE TABLE countries (
-    country_id INT AUTO_INCREMENT PRIMARY KEY;
+    country_id INT AUTO_INCREMENT PRIMARY KEY,
     country_name VARCHAR(50) NOT NULL,
     country_code VARCHAR(50),
     region VARCHAR(50),
@@ -31,7 +31,7 @@ CREATE TABLE countries (
 -- 3. create cities table
 DROP TABLE IF EXISTS cities;
 CREATE TABLE cities (
-    city_id INT AUTO_INCREMENT PRIMARY KEY;
+    city_id INT AUTO_INCREMENT PRIMARY KEY,
     city_name VARCHAR(50) NOT NULL,
     latitude DECIMAL(8, 4),
     longitude DECIMAL(8, 4),
