@@ -41,5 +41,5 @@ CREATE TABLE cities (
 
     -- foreign key
     country_id INT,
-    FOREIGN KEY (country_id) REFERENCES countries(currency_id)
+    FOREIGN KEY (country_id) REFERENCES countries(country_id)
 );
