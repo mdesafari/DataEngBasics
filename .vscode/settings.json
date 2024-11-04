@@ -13,6 +13,16 @@
             "database": "mysql",
             "username": "root",
             "askForPassword": true
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "askForPassword": true,
+            "driver": "PostgreSQL",
+            "name": "TutoConnection",
+            "database": "tutorialdb",
+            "username": "postgres"
         }
     ]
 }
