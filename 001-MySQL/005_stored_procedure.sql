@@ -15,6 +15,9 @@ BEGIN
             SELECT city_name, FORMAT(population, 0) FROM cities
             ORDER BY city_name ASC;
         
+        WHEN 'Canada' THEN
+            SELECT * FROM extract_cities_canada;
+        
         ELSE
             SELECT * FROM currencies;
     END CASE;
@@ -22,4 +25,4 @@ END;
 
 
 -- use the stored procedure
-CALL display_table('Countries');
+CALL display_table('Canada');
