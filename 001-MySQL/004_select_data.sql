@@ -24,4 +24,37 @@ ORDER BY
     nb_countries DESC;
 
 
--- 41:27
+/*
+List all of the sub-regions and the total number of cities in each sub-region. Order by sub-region name alphabetically.
+*/
+
+SELECT
+    sub_region,
+    COUNT(city_id) AS nb_cities
+FROM countries AS ct
+INNER JOIN cities AS ci
+ON ct.country_id = ci.country_id
+GROUP BY sub_region
+ORDER BY sub_region ASC;
+
+/*
+List all of the countries and the total number of cities in the Southern 
+Europe sub-region that were inserted in 2021 or more.  
+Capitalize the country names and order alphabetically 
+by the **LAST** letter of the country name and the number of cities.
+*/
+
+SELECT
+    CONCAT(
+        UCASE(SUBSTRING(country_name, 1, 1)),
+        SUBSTRING(country_name, 2)
+    ) AS country_name,
+    COUNT(city_id) AS nb_cities
+FROM countries AS c
+INNER JOIN cities AS i
+ON c.country_id = i.country_id
+WHERE
+    c.sub_region = 'southern europe' AND
+    EXTRACT(YEAR FROM c.created_on) >= 2021
+GROUP BY country_name
+ORDER BY SUBSTRING(country_name, -1) ASC, nb_cities ASC;
